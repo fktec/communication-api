@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  communication-api:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: communication-api
+    ports:
+      - "8080:8080"
+networks:
+  rede-one:
+    driver: bridge
