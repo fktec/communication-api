@@ -1,4 +1,4 @@
-package br.com.communication.scheduling;
+package br.com.communication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
