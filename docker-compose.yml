@@ -1,12 +1,24 @@
 version: "3.4"
 services:
-  communication-api:
+
+  mysql-service:
+    image: mariadb
+    container_name: mysql-communication
+    networks: 
+      - rede-one 
+      
+  communication-api-service:
     build:
       dockerfile: ./Dockerfile
       context: .
     container_name: communication-api
+    networks: 
+      - rede-one
     ports:
       - "8080:8080"
+    depends_on: 
+      - "mysql-service"
+      
 networks:
   rede-one:
     driver: bridge
